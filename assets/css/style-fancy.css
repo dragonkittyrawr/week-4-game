@@ -34,29 +34,29 @@ footer {
     background: transparent;
 }*/
 
-#finn,
-#jake,
-#pb,
-#marce {
+#pc1,
+#pc2,
+#pc3,
+#pc4 {
     width: 300px;
     height: 300px;
     display: inline;
     float: left;
 }
 
-#finn {
+#pc1 {
     background: url("../images/finn/finnIcon.jpg");
 }
 
-#jake {
+#pc2 {
     background: url("../images/jake/jakeIcon.jpg");
 }
 
-#pb {
+#pc3 {
     background: url("../images/bubblegum/pbIcon.png");
 }
 
-#marce {
+#pc4 {
     background: url("../images/marceline/marcelineIcon.jpg");
 }
 

@@ -1,61 +1,127 @@
 // Part 0 - Pre-Game
 
-// 0.1 - PC Stats
+// 0.1 - Characters Stats
 
-// Health Points
+// Health Points = hp
 
-var pcHp = 10;
+// Attack Power = ap
 
-// Attack Power
+// Counter Attack Power = cap
 
-var pcAp = 1;
+// CHARACTERS
 
-// Counter Attack Power
 
-var pcCap = 2;
+var finn = {
+    hp: 100,
+    ap: 5,
+    cap: 5
+};
 
-// 0.2 - Enemy Stats (enemies do not have Attack Power.)
+var jake = {
+    hp: 100,
+    ap: 5,
+    cap: 5
+};
 
-// Health Points
+var pb = {
+    hp: 100,
+    ap: 5,
+    cap: 5
+};
 
-var eHp = 8;
+var marce = {
+    hp: 100,
+    ap: 5,
+    cap: 5
+};
 
-// Counter Attack Power
+var fighter = {};
 
-var eCap = 1;
+var enemy1 = {};
 
-// 0.3 - Score
+var enemy2 = {};
+
+var enemy3 = {};
+
+
+
+// 0.2 - Score
 
 var wins = 0;
 
 var losses = 0;
 
-// Part 1 - Player chooses fighter.
+// MAIN FUNCTION START
+
+$(document).ready(function() {
+
+    // Part 1 - Player chooses fighter.
+
+    $('div').click(function() {
+        var fightName = $(this).attr('id');
+        var playAs = $(this).attr('value');
+        console.log(this);
+        console.log(fightName);
+
+        if (fightName === "finn") {
+            fighter = finn;
+        } else if (fightName === "jake") {
+            fighter = jake;
+        } else if (fightName === "pb") {
+            fighter = pb;
+        } else if (fightName === "marce") {
+            fighter = marce;
+        }
+
+        console.log(fighter);
 
 
-// Part 2 - Display enemies.
 
 
-// Part 3 - Combat
 
-// 3.1 Player chooses an enemy to fight.
 
-	// 3.2a Player clicks "attack" until Enemy or PC is dead.
+        if (fighter.cap > 0) {
 
-	// 3.2b When Player clicks "attack" PC Attack Power increases by its base Attack Power.
+            var iChooseU = alert("Play as " + playAs + "?");
+        }
 
-// 3.3 If Player defeats enemy 1 they select their next opponent.
 
-	// 3.3a Player clicks "attack" until Enemy or PC is dead.
+        // if (iChooseU === true) {
+        //     enemySelect();
+        // };
+    });
 
-	// 3.3b When Player clicks "attack" PC Attack Power increases by its base Attack Power.
 
-// 3.4 If Player defeats enemy 2 they fight last remaining opponent.
 
-	// 3.4a Player clicks "attack" until Enemy or PC is dead.
 
-	// 3.4b When Player clicks "attack" PC Attack Power increases by its base Attack Power.
 
-// 3.5a If Player defeats enemy 3 they have won.  Wins++.
 
-// 3.5b If PC dies at any point losses++.
+    // Part 2 - Display enemies.
+
+
+    // Part 3 - Combat
+
+    // 3.1 Player chooses an enemy to fight.
+
+    // 3.2a Player clicks "attack" until Enemy or PC is dead.
+
+    // 3.2b When Player clicks "attack" PC Attack Power increases by its base Attack Power.
+
+    // 3.3 If Player defeats enemy 1 they select their next opponent.
+
+    // 3.3a Player clicks "attack" until Enemy or PC is dead.
+
+    // 3.3b When Player clicks "attack" PC Attack Power increases by its base Attack Power.
+
+    // 3.4 If Player defeats enemy 2 they fight last remaining opponent.
+
+    // 3.4a Player clicks "attack" until Enemy or PC is dead.
+
+    // 3.4b When Player clicks "attack" PC Attack Power increases by its base Attack Power.
+
+    // 3.5a If Player defeats enemy 3 they have won.  Wins++.
+
+    // 3.5b If PC dies at any point, losses++.
+
+    // MAIN FUNCTION END
+});
