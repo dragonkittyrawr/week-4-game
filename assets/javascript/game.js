@@ -55,11 +55,11 @@ var losses = 0;
 
 // FUNCTIONS
 
-$(document).ready(function() {
+
 
     function fighterSelect(event) {
-        var fightName = $(this).attr('id');
-        var playAs = $(this).attr('value');
+        var fightName = $(this).attr("id");
+        var playAs = $(this).attr("value");
 
         console.log(this);
         console.log(fightName);
@@ -72,7 +72,7 @@ $(document).ready(function() {
 
                 $(this).siblings().removeClass("characters").addClass("enemies");
 
-                // console.log($('.characters').siblings());
+                // console.log($(".characters").siblings());
 
                 $(this).removeClass("characters").addClass("pc");
 
@@ -97,8 +97,8 @@ $(document).ready(function() {
 
     function enemySelect1(event) {
 
-        var enemyName1 = $(this).attr('id');
-        var fight1 = $(this).attr('value');
+        var enemyName1 = $(this).attr("id");
+        var fight1 = $(this).attr("value");
 
         console.log(enemyName1);
 
@@ -129,8 +129,8 @@ $(document).ready(function() {
 
     function enemySelect2(event) {
 
-        var enemyName2 = $(this).attr('id');
-        var fight2 = $(this).attr('value');
+        var enemyName2 = $(this).attr("id");
+        var fight2 = $(this).attr("value");
 
         console.log(enemyName2);
 
@@ -161,8 +161,8 @@ $(document).ready(function() {
 
     function enemySelect3(event) {
 
-        var enemyName3 = $(this).attr('id');
-        var fight3 = $(this).attr('value');
+        var enemyName3 = $(this).attr("id");
+        var fight3 = $(this).attr("value");
 
         console.log(enemyName3);
 
@@ -191,7 +191,8 @@ $(document).ready(function() {
         }
     }
 
-    });
+    $(document).ready(fighterSelect());
+    
 
     // MAIN FUNCTION START
 
@@ -235,4 +236,3 @@ $(document).ready(function() {
     // 3.5b If PC dies at any point, losses++.
 
     // MAIN FUNCTION END
-
