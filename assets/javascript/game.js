@@ -37,6 +37,8 @@ var marce = {
 
 var fighter = {};
 
+var iChooseU = "";
+
 var enemy1 = {};
 
 var enemy2 = {};
@@ -51,57 +53,166 @@ var wins = 0;
 
 var losses = 0;
 
-// MAIN FUNCTION START
+// FUNCTIONS
 
 $(document).ready(function() {
 
-    // Part 1 - Player chooses fighter.
-
-    $('div').click(function() {
+    function fighterSelect(event) {
         var fightName = $(this).attr('id');
         var playAs = $(this).attr('value');
+
         console.log(this);
         console.log(fightName);
 
-        if (fightName === "finn") {
-            fighter = finn;
-        } else if (fightName === "jake") {
-            fighter = jake;
-        } else if (fightName === "pb") {
-            fighter = pb;
-        } else if (fightName === "marce") {
-            fighter = marce;
+        if ($(this).attr("class") !== "enemies") {
+
+            var iChooseU = confirm("Play as " + playAs + "?");
+
+            if (iChooseU === true) {
+
+                $(this).siblings().removeClass("characters").addClass("enemies");
+
+                // console.log($('.characters').siblings());
+
+                $(this).removeClass("characters").addClass("pc");
+
+                if (fightName === "finn") {
+                    fighter = finn;
+                } else if (fightName === "jake") {
+                    fighter = jake;
+                } else if (fightName === "pb") {
+                    fighter = pb;
+                } else if (fightName === "marce") {
+                    fighter = marce;
+                }
+            }
+
+
+            console.log(fighter);
+
+            return (fighter);
         }
-
-        console.log(fighter);
-
+    }
 
 
+    function enemySelect1(event) {
 
+        var enemyName1 = $(this).attr('id');
+        var fight1 = $(this).attr('value');
 
+        console.log(enemyName1);
 
-        if (fighter.cap > 0) {
+        if (fighter.hp > 0) {
 
-            var iChooseU = alert("Play as " + playAs + "?");
+            var fight1Go = confirm("Fight " + fight1 + "?")
+
+            if (fight1Go === true) {
+
+                $(this).removeClass("enemies").addClass("firstEnemy");
+
+                if (enemyName1 === "finn") {
+                    enemy1 = finn;
+                } else if (enemyName1 === "jake") {
+                    enemy1 = jake;
+                } else if (enemyName1 === "pb") {
+                    enemy1 = pb;
+                } else if (enemyName1 === "marce") {
+                    enemy1 = marce;
+                };
+
+                console.log(enemy1);
+
+                return (enemy1);
+            }
         }
+    }
 
+    function enemySelect2(event) {
 
-        // if (iChooseU === true) {
-        //     enemySelect();
-        // };
+        var enemyName2 = $(this).attr('id');
+        var fight2 = $(this).attr('value');
+
+        console.log(enemyName2);
+
+        if (fighter.hp > 0) {
+
+            var fight2Go = confirm("Fight " + fight2 + "?")
+
+            if (fight2Go === true) {
+
+                $(this).removeClass("enemies").addClass("secondEnemy");
+
+                if (enemyName2 === "finn") {
+                    enemy2 = finn;
+                } else if (enemyName2 === "jake") {
+                    enemy2 = jake;
+                } else if (enemyName2 === "pb") {
+                    enemy2 = pb;
+                } else if (enemyName2 === "marce") {
+                    enemy2 = marce;
+                };
+
+                console.log(enemy2);
+
+                return (enemy2);
+            }
+        }
+    }
+
+    function enemySelect3(event) {
+
+        var enemyName3 = $(this).attr('id');
+        var fight3 = $(this).attr('value');
+
+        console.log(enemyName3);
+
+        if (fighter.hp > 0) {
+
+            var fight3Go = confirm("Fight " + fight3 + "?")
+
+            if (fight3Go === true) {
+
+                $(this).removeClass("enemies").addClass("thirdEnemy");
+
+                if (enemyName3 === "finn") {
+                    enemy3 = finn;
+                } else if (enemyName3 === "jake") {
+                    enemy3 = jake;
+                } else if (enemyName3 === "pb") {
+                    enemy3 = pb;
+                } else if (enemyName3 === "marce") {
+                    enemy3 = marce;
+                };
+
+                console.log(enemy3);
+
+                return (enemy3);
+            }
+        }
+    }
+
     });
 
+    // MAIN FUNCTION START
 
 
 
+    // Part 1 - Player chooses fighter.
+
+    $(".characters").click(fighter);
 
 
-    // Part 2 - Display enemies.
+    // Part 2 - Enemy1 select.
+
+
+    $(".enemies").click(enemy1);
 
 
     // Part 3 - Combat
 
-    // 3.1 Player chooses an enemy to fight.
+    // // 3.1 Reveal comabat area.
+
+    // $("#gameArea").removeClass("hidden");
 
     // 3.2a Player clicks "attack" until Enemy or PC is dead.
 
@@ -124,4 +235,4 @@ $(document).ready(function() {
     // 3.5b If PC dies at any point, losses++.
 
     // MAIN FUNCTION END
-});
+

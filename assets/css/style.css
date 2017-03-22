@@ -1,17 +1,24 @@
 html,
 body {
     height: 100%;
+    position: relative;
+}
+
+body {
+    font-family: "Chalkboard";
+    font-size: 14px;
 }
 
 header {
     width: 100%;
-    height: 50px;
+    height: 160px;
     padding: 20px;
     margin-bottom: 5px;
 }
 
 main {
     height: 100%;
+    min-height: 800px;
     width: 100%;
 }
 
@@ -22,52 +29,79 @@ footer {
     background: #000000;
     margin-top: 5px;
     clear: both;
+    position: relative;
+    top: 100%;
+}
+
+h1 {
+    text-align: center;    
+    font-size: 200%;
 }
 
 /* Character select. */
 
-/*#pcFace {
-    width: 300px;
-    height: 300px;
-    display: inline;
-    float: left;
-    background: transparent;
-}*/
+#characterSelect {
+    width: 100%;
+    height: 225px;
+    text-align: center;
+    margin: 1%;
+}
 
 #finn,
 #jake,
 #pb,
 #marce {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     display: inline;
     float: left;
+    margin: 0 5%;
 }
 
 #finn {
-    background: url("../images/finn/finnIcon.jpg");
+    background: url("../images/finn/finnIconFace.png");
 }
 
 #jake {
-    background: url("../images/jake/jakeIcon.jpg");
+    background: url("../images/jake/jakeIconFace.png");
 }
 
 #pb {
-    background: url("../images/bubblegum/pbIcon.png");
+    background: url("../images/bubblegum/pbIconFace.png");
 }
 
 #marce {
-    background: url("../images/marceline/marcelineIcon.jpg");
+    background: url("../images/marceline/marcelineIconFace.png");
 }
 
-#characterSelect
+#gameArea {
+    background: url("../images/backgrounds/skyBkgrdCropped.png");
+    width: 1300px;
+    height: 700px;
+    border: solid 1px #000000;
+    margin: 0 auto;
+    clear: both;
+}
+
+
 
 .pageHeader {
     background: url("../images/adventureTimeLogo.png");
+    background-repeat: no-repeat;
 }
 
-.select {
+.pc {
+    border-color: green;
+    border-style: solid;
+    border-width: 5px;
+}
+
+.enemies {
     border-color: red;
     border-style: solid;
     border-width: 5px;
+}
+
+.hidden {
+    display: none;
 }
