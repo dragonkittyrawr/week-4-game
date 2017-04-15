@@ -10,61 +10,64 @@
 
 // CHARACTERS
 
-
-var finn = {
-    hp: 100,
-    ap: 5,
-    cap: 5
-};
-
-var jake = {
-    hp: 100,
-    ap: 5,
-    cap: 5
-};
-
-var pb = {
-    hp: 100,
-    ap: 5,
-    cap: 5
-};
-
-var marce = {
-    hp: 100,
-    ap: 5,
-    cap: 5
-};
-
-var fighter = {};
-
-var iChooseU = "";
-
-var enemy1 = {};
-
-var enemy2 = {};
-
-var enemy3 = {};
+function gamePlay() {
 
 
+    var finn = {
+        hp: 100,
+        ap: 5,
+        cap: 5
+    };
 
-// 0.2 - Score
+    var jake = {
+        hp: 100,
+        ap: 5,
+        cap: 5
+    };
 
-var wins = 0;
+    var pb = {
+        hp: 100,
+        ap: 5,
+        cap: 5
+    };
 
-var losses = 0;
+    var marce = {
+        hp: 100,
+        ap: 5,
+        cap: 5
+    };
 
-// FUNCTIONS
+    var fighter = {};
+
+    var iChooseU = "";
+
+    var enemy1 = {};
+
+    var enemy2 = {};
+
+    var enemy3 = {};
 
 
+
+    // 0.2 - Score
+
+    var wins = 0;
+
+    var losses = 0;
+
+    // FUNCTIONS
+
+    $(".characters").on("click", fighterSelect);
 
     function fighterSelect(event) {
+
         var fightName = $(this).attr("id");
         var playAs = $(this).attr("value");
 
         console.log(this);
         console.log(fightName);
 
-        if ($(this).attr("class") !== "enemies") {
+        if ($(this).attr("class") !== "enemies" && playAs !== undefined) {
 
             var iChooseU = confirm("Play as " + playAs + "?");
 
@@ -86,7 +89,7 @@ var losses = 0;
                     fighter = marce;
                 }
             }
-
+            $(".enemies").on("click", enemySelect1);
 
             console.log(fighter);
 
@@ -122,6 +125,8 @@ var losses = 0;
 
                 console.log(enemy1);
 
+                $(".enemies").on("click", enemySelect2);
+
                 return (enemy1);
             }
         }
@@ -153,6 +158,8 @@ var losses = 0;
                 };
 
                 console.log(enemy2);
+
+                $(".enemies").on("click", enemySelect3);
 
                 return (enemy2);
             }
@@ -191,48 +198,54 @@ var losses = 0;
         }
     }
 
-    $(document).ready(fighterSelect());
-    
+}
 
-    // MAIN FUNCTION START
-
+$(document).ready(gamePlay(event));
 
 
-    // Part 1 - Player chooses fighter.
-
-    $(".characters").click(fighter);
 
 
-    // Part 2 - Enemy1 select.
 
 
-    $(".enemies").click(enemy1);
+// MAIN FUNCTION START
 
 
-    // Part 3 - Combat
 
-    // // 3.1 Reveal comabat area.
+// Part 1 - Player chooses fighter.
 
-    // $("#gameArea").removeClass("hidden");
 
-    // 3.2a Player clicks "attack" until Enemy or PC is dead.
 
-    // 3.2b When Player clicks "attack" PC Attack Power increases by its base Attack Power.
 
-    // 3.3 If Player defeats enemy 1 they select their next opponent.
+// Part 2 - Enemy1 select.
 
-    // 3.3a Player clicks "attack" until Enemy or PC is dead.
 
-    // 3.3b When Player clicks "attack" PC Attack Power increases by its base Attack Power.
 
-    // 3.4 If Player defeats enemy 2 they fight last remaining opponent.
 
-    // 3.4a Player clicks "attack" until Enemy or PC is dead.
 
-    // 3.4b When Player clicks "attack" PC Attack Power increases by its base Attack Power.
+// Part 3 - Combat
 
-    // 3.5a If Player defeats enemy 3 they have won.  Wins++.
+// // 3.1 Reveal comabat area.
 
-    // 3.5b If PC dies at any point, losses++.
+// $("#gameArea").removeClass("hidden");
 
-    // MAIN FUNCTION END
+// 3.2a Player clicks "attack" until Enemy or PC is dead.
+
+// 3.2b When Player clicks "attack" PC Attack Power increases by its base Attack Power.
+
+// 3.3 If Player defeats enemy 1 they select their next opponent.
+
+// 3.3a Player clicks "attack" until Enemy or PC is dead.
+
+// 3.3b When Player clicks "attack" PC Attack Power increases by its base Attack Power.
+
+// 3.4 If Player defeats enemy 2 they fight last remaining opponent.
+
+// 3.4a Player clicks "attack" until Enemy or PC is dead.
+
+// 3.4b When Player clicks "attack" PC Attack Power increases by its base Attack Power.
+
+// 3.5a If Player defeats enemy 3 they have won.  Wins++.
+
+// 3.5b If PC dies at any point, losses++.
+
+// MAIN FUNCTION END
