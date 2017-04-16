@@ -34,9 +34,10 @@ footer {
 }
 
 h1 {
-    text-align: center;    
+    text-align: center;
     font-size: 200%;
 }
+
 
 /* Character select. */
 
@@ -66,6 +67,10 @@ h1 {
     background: url("../images/jake/jakeIconFace.png");
 }
 
+#jake:hover {
+    background: url("../images/jake/jakeIconHappyFace.png")
+}
+
 #pb {
     background: url("../images/bubblegum/pbIconFace.png");
 }
@@ -82,8 +87,6 @@ h1 {
     margin: 0 auto;
     clear: both;
 }
-
-
 
 .pageHeader {
     background: url("../images/adventureTimeLogo.png");

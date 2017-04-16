@@ -93,7 +93,7 @@ function gamePlay() {
 
             console.log(fighter);
 
-            return (fighter);
+            return;
         }
     }
 
@@ -127,7 +127,7 @@ function gamePlay() {
 
                 $(".enemies").on("click", enemySelect2);
 
-                return (enemy1);
+                return;
             }
         }
     }
@@ -161,7 +161,7 @@ function gamePlay() {
 
                 $(".enemies").on("click", enemySelect3);
 
-                return (enemy2);
+                return;
             }
         }
     }
@@ -193,7 +193,7 @@ function gamePlay() {
 
                 console.log(enemy3);
 
-                return (enemy3);
+                return;
             }
         }
     }
